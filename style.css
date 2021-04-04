@@ -42,6 +42,7 @@ textarea {
 }
 
 button {
+  width: 100px;
   cursor: pointer;
   font-size: 1.3rem;
   border: none;
@@ -164,6 +165,8 @@ p {
 
 .convertbuttons {
   display: flex;
+  /* justify-content: center; */
+  align-items: center;
   flex-direction: column;
 }
 
@@ -181,15 +184,40 @@ p {
 }
 
 .btn--hangeul {
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: 15px;
+
   border-radius: 3px;
   height: 20px;
   font-family: 'Helvetica', sans-serif;
   font-size: 1.2rem;
   box-shadow: none;
+  width: 80px;
 }
 
+.searchtool {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#searchform {
+  display: flex;
+  align-items: center;
+}
+.searchtoolform {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchtool-output {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.btn--searchtool-submit {
+  height: 20px;
+}
 .signature {
   font-size: 0.8rem;
   color: rgb(205, 205, 205);

@@ -1,15 +1,27 @@
 'use strict';
-
+// Converter elements
 const textInputEl = document.querySelector('.textarea--input');
 const textOutputEl = document.querySelector('.textarea--output');
 const textfieldEl = document.querySelector('.textfield');
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-
 const submitBtn = document.querySelector('.btn--submit');
 const clearBtn = document.querySelector('.btn--clear');
+// modal + overlay
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 const hangeulBtn = document.querySelector('.btn--hangeul');
 const closeModalBtn = document.querySelector('.btn--close-modal');
+// Search Tool Elements
+const searchInputEl = document.querySelector('.input--searchtool');
+const searchOutputResultsEl = document.querySelector(
+  '.output--searchtool-name'
+);
+const searchOutputDescriptionEl = document.querySelector(
+  '.output--searchtool-description'
+);
+const searchOutputDetailsEl = document.querySelector(
+  '.output--searchtool-detail'
+);
+const searchToolBtn = document.querySelector('.btn--searchtool-submit');
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -30,80 +42,11 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
-
+// prettier-ignore
 const hangulDict = {
-  hangeul: [
-    'ㄱ',
-    'ㄲ',
-    'ㄴ',
-    'ㄷ',
-    'ㄸ',
-    'ㄹ',
-    'ㅁ',
-    'ㅂ',
-    'ㅃ',
-    'ㅅ',
-    'ㅆ',
-    'ㅇ',
-    'ㅈ',
-    'ㅉ',
-    'ㅊ',
-    'ㅋ',
-    'ㅌ',
-    'ㅍ',
-    'ㅎ',
-    'ㅏ',
-    'ㅐ',
-    'ㅑ',
-    'ㅒ',
-    'ㅓ',
-    'ㅔ',
-    'ㅕ',
-    'ㅖ',
-    'ㅗ',
-    'ㅛ',
-    'ㅜ',
-    'ㅠ',
-    'ㅡ',
-    'ㅣ',
-  ],
-  consonants: [
-    'ㄱ',
-    'ㄲ',
-    'ㄴ',
-    'ㄷ',
-    'ㄸ',
-    'ㄹ',
-    'ㅁ',
-    'ㅂ',
-    'ㅃ',
-    'ㅅ',
-    'ㅆ',
-    'ㅇ',
-    'ㅈ',
-    'ㅉ',
-    'ㅊ',
-    'ㅋ',
-    'ㅌ',
-    'ㅍ',
-    'ㅎ',
-  ],
-  vowels: [
-    'ㅏ',
-    'ㅐ',
-    'ㅑ',
-    'ㅒ',
-    'ㅓ',
-    'ㅔ',
-    'ㅕ',
-    'ㅖ',
-    'ㅗ',
-    'ㅛ',
-    'ㅜ',
-    'ㅠ',
-    'ㅡ',
-    'ㅣ',
-  ],
+  hangeul: ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ','ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅛ','ㅜ','ㅠ','ㅡ','ㅣ'],
+  consonants: ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'],
+  vowels: ['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅛ','ㅜ','ㅠ','ㅡ','ㅣ'],
   jotiert: ['ㅑ', 'ㅒ', 'ㅖ', 'ㅛ', 'ㅠ', 'ㅕ'],
   // Checks if letter is a Consonant
   isConsonant(letter) {
@@ -236,26 +179,9 @@ const hangulDict = {
       return 'r';
     } else if (['ㄴ', 'ㄹ'].includes(prev)) {
       return 'l';
+    // prettier-ignore
     } else if (
-      [
-        'ㄱ',
-        'ㄲ',
-        'ㄷ',
-        'ㄸ',
-        'ㅁ',
-        'ㅂ',
-        'ㅃ',
-        'ㅅ',
-        'ㅆ',
-        'ㅇ',
-        'ㅈ',
-        'ㅉ',
-        'ㅊ',
-        'ㅋ',
-        'ㅌ',
-        'ㅍ',
-        'ㅎ',
-      ].includes(prev)
+      ['ㄱ','ㄲ','ㄷ','ㄸ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'].includes(prev)
     ) {
       return 'n';
     } else if (this.notHangeul(prev)) {
@@ -923,4 +849,45 @@ submitBtn.addEventListener('click', function () {
 
 clearBtn.addEventListener('click', function () {
   textInputEl.value = textOutputEl.value = '';
+});
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+// Search Tool Module
+
+const api_key = 'AIzaSyCJFQSOLD5D6r3bOJIecLv18-4_eibv_GA';
+
+const AJAX = async function (query) {
+  try {
+    const fetchedData = await fetch(
+      `https://kgsearch.googleapis.com/v1/entities:search?query=${query}&key=${api_key}&limit=1&indent=True`
+    );
+    console.log(fetchedData);
+    const data = await fetchedData.json();
+    console.log(data);
+    const resultName = data.itemListElement[0].result.name;
+    const resultDescription = data.itemListElement[0].result.description;
+    const resultDetail =
+      data.itemListElement[0].result.detailedDescription.articleBody;
+
+    searchOutputResultsEl.value = `${resultName}`;
+    searchOutputDescriptionEl.value = `${
+      resultDescription ? resultDescription : 'No Description found!'
+    }`;
+    searchOutputDetailsEl.value = resultDetail;
+  } catch (err) {
+    console.error(err);
+    searchOutputResultsEl.value =
+      'Sorry, looks like there are no results for that query!';
+  }
+};
+
+searchToolBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  searchOutputResultsEl.value = searchOutputDescriptionEl.value = searchOutputDetailsEl.value =
+    '';
+  const input = searchInputEl.value.trim().replace(' ', '+');
+  console.log(input);
+  AJAX(input);
 });
