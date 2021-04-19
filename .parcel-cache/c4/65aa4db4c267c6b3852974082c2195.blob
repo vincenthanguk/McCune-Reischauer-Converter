@@ -562,7 +562,7 @@ clearBtn.addEventListener('click', function () {
 // ///////////////////////////////////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////////
 // Search Tool Module
-const api_key = "AIzaSyA4atl79hofASMkZlvK3PWUsScdU1XalBs";
+const api_key = "AIzaSyAHd78Vg666Vid9gtPAJe0-9DlHBq0viW8";
 const AJAX = async function (query) {
   try {
     const fetchedData = await fetch(`https://kgsearch.googleapis.com/v1/entities:search?query=${query}&key=${api_key}&limit=1&indent=True`);
