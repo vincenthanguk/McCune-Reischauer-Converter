@@ -1,0 +1,26 @@
+{
+  "name": "converter-project-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hangul.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "hangul-js": "^0.2.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincenthanguk/McCune-Reischauer-Converter.git"
+  },
+  "author": "Vincent Kreusel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincenthanguk/McCune-Reischauer-Converter/issues"
+  },
+  "homepage": "https://github.com/vincenthanguk/McCune-Reischauer-Converter#readme",
+  "devDependencies": {
+    "parcel": "*"
+  }
+}

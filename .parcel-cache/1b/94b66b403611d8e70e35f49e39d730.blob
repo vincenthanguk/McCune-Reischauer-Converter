@@ -1,61 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>McCune-Reischauer Romanizer</title>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="/favicon.HASH_REF_78e76f790c1cb3ff938ef11c481dfaa8.png">
+    <link rel="stylesheet" href="/index.HASH_REF_8a6e625a6f078c797be837fbf556d9ac.css">
 
         <!-- Script -->
-    <script defer src="hangul.js"></script>
-    <script defer src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
-    <script defer src="https://code.jquery.com/qunit/qunit-2.2.1.js"></script>
-    <script defer src="script.js"></script>
+    <script defer="" src="/index.HASH_REF_d4ec0480b9fee27b30b6777887adc047.js"></script>
+    <script defer="" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script defer="" src="https://code.jquery.com/qunit/qunit-2.2.1.js"></script>
+    <script defer="" src="/index.HASH_REF_d231a23f43d60e28ed500b93b4f5078c.js"></script>
   </head>
   <body>
     <!-- FB Like Button -->
     <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="y0HoWCv5"></script>
+<script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="y0HoWCv5"></script>
 <!-- Body -->
     <div class="container">
       <h1><span id="hangul"> Han'gŭl Romanizer - </span>한글 로마자 변환기</h1>
       <!-- CONVERTER TOOL -->
       <div class="inputfield">
-        <textarea
-          class="textarea--input"
-          type="textarea"
-          placeholder="한글을 입력하십시오!"
-          maxlength="600"
-          required
-        ></textarea>
+        <textarea class="textarea--input" type="textarea" placeholder="한글을 입력하십시오!" maxlength="600" required=""></textarea>
         <div class="convertbuttons">
           <button class="btn--submit">Convert! 바꾸기</button>
           <button class="btn--clear">Clear! 삭제</button>
             <button class="btn--hangeul">Test Cases</button>
         </div>
-        <textarea
-          class="textarea--output"
-          type="textarea"
-          placeholder="McCune-Reischauer Romanization"
-          maxlength="600"
-          readonly
-        ></textarea>
+        <textarea class="textarea--output" type="textarea" placeholder="McCune-Reischauer Romanization" maxlength="600" readonly=""></textarea>
       </div>
 
       <!-- Google Search API -->
-      <h1><span id="hangul">Search Tool (Beta)</span></h1>
-      <p>Look up official romanization of proper names, place names, etc. through Google Search API</p>
+      <h1><span id="hangul">Search Tool Test</span></h1>
       <div class="searchtool">
   
           <form id="searchform" action="">
-            <input class="input--searchtool" type="text" required>
+            <input class="input--searchtool" type="text" required="">
             <button class="btn--searchtool-submit">Search!</button>
             <div class="searchtool-output">
-            <input class="output--searchtool-name" type="text" placeholder="Results" readonly>
-            <input class="output--searchtool-description" type="text" placeholder="Description" readonly>
-            <textarea class="output--searchtool-detail" type="textarea" placeholder="Detailed Description" readonly></textarea>
+            <input class="output--searchtool-name" type="text" placeholder="Results" readonly="">
+            <input class="output--searchtool-description" type="text" placeholder="Description" readonly="">
+            <textarea class="output--searchtool-detail" type="textarea" placeholder="Detailed Description" readonly=""></textarea>
           </div>
           </form>
    
@@ -71,7 +58,7 @@
         <div class="modaldiv">
           <h3>Consonants</h3>
           <p>
-            <ol>
+            </p><ol>
             <li>(ㄱ) 가다 사기 물건 천기 식물 좋게 않고 학생 떡</li>
             <li>(ㄴ) 나비 신랑 한문 연구 산</li>
             <li>(ㄷ) 다방 하다 간단 벽돌 맏며느리 굳세다
@@ -94,8 +81,8 @@
                 <li>(ㅍ) 팔 피폐 숲길 앞문 숲</li>
                 <li>(ㅎ) 하늘 구하다 좋습니다 좋게
                   손해</li>
-          </p>
-        </div>
+          <p></p>
+        </ol></div>
         <div class="modaldiv">
           <h3>Double Consonants</h3>
           <ol>
