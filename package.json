@@ -8,6 +8,8 @@
     "hangul-js": "^0.2.6"
   },
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
