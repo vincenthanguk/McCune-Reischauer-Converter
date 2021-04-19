@@ -891,3 +891,13 @@ searchToolBtn.addEventListener('click', function (e) {
   console.log(input);
   AJAX(input);
 });
+
+//////////////////////////////////////////////////////
+
+const testString = '한글';
+
+console.log(testString);
+
+console.log(Hangul.disassemble(testString)[1]);
+console.log(Hangul.disassemble(testString)[1 - 1]);
+console.log(Hangul.disassemble(testString)[1 + 1]);
