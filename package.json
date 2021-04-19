@@ -2,7 +2,7 @@
   "name": "converter-project-2.0",
   "version": "1.0.0",
   "description": "",
-  "main": "hangul.js",
+  "default": "index.html",
   "dependencies": {
     "dotenv": "^8.2.0",
     "hangul-js": "^0.2.6"
