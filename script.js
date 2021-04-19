@@ -1,7 +1,6 @@
 ('use strict');
 // ENV for API Key
 require('dotenv').config();
-console.log(process.env.API_KEY);
 
 // Hangul.js
 const Hangul = require('hangul-js');
