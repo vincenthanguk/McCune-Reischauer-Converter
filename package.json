@@ -5,7 +5,8 @@
   "default": "index.html",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "hangul-js": "^0.2.6"
+    "hangul-js": "^0.2.6",
+    "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
     "start": "parcel index.html",

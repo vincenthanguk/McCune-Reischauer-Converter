@@ -99,7 +99,7 @@ const hangulDict = {
     } else if (fol === 'ㄴ' || fol === 'ㄹ' || fol === 'ㅁ') {
       return 'ng';
     } else if (
-      (this.isVowel(prev) && this.isVowel(fol)) ||
+      (this.isVowel(prev) && (this.isVowel(fol))|| fol ==='ㅇ') ||
       ['ㄴ', 'ㄹ', 'ㅁ'].includes(prev)
     ) {
       return 'g';
@@ -113,7 +113,7 @@ const hangulDict = {
       return 'k';
     } else if (['ㄴ', 'ㄹ', 'ㅁ'].includes(fol)) {
       return 'ng';
-    } else if (this.notHangeul(fol) || this.consonants.includes(fol)) {
+    } else if (this.notHangeul(fol) || (this.consonants.includes(fol)&& fol !== 'ㅇ')) {
       return 'k';
     } else {
       return 'kk';
@@ -181,7 +181,7 @@ const hangulDict = {
       (hangulDict.consonants.includes(fol2) || this.notHangeul(fol2))
     ) {
       return '';
-    } else if ((this.isVowel(prev) && this.isVowel(fol)) || fol === 'ㅇ') {
+    } else if ((this.isVowel(prev) && this.isVowel(fol)) || (fol === 'ㅇ' || fol ==='ㅎ')) {
       return 'r';
     } else if (['ㄴ', 'ㄹ'].includes(prev)) {
       return 'l';
@@ -327,7 +327,13 @@ const hangulDict = {
     } else if (
       fol === 'ㅇ' &&
       (fol2 === 'ㅣ' || this.jotiert.includes(fol2)) &&
-      this.consonants.includes(fol3)
+      fol3 === 'ㅍ'
+    ) {
+      return 'nn';
+      // 허드렛일 옛이야기exception
+    } else if (
+      prev === 'ㅔ' ||
+      (prev === 'ㅖ' && fol === 'ㅇ' && fol2 === 'ㅣ')
     ) {
       return 'nn';
       // normal cases
@@ -398,7 +404,7 @@ const hangulDict = {
       return "ch'";
     } else if (
       (this.isVowel(prev) && this.isVowel(fol)) ||
-      ['ㄴ', 'ㄹ', 'ㅁ', 'ㅇ'].includes(prev)
+      (['ㄴ', 'ㄹ', 'ㅁ', 'ㅇ'].includes(prev) || fol === 'ㅇ')
     ) {
       return 'j';
     } else if (['ㄴ', 'ㄹ', 'ㅁ'].includes(fol)) {
@@ -471,10 +477,10 @@ const hangulDict = {
       return 'n';
     } else if (fol === 'ㅇ' && fol2 === 'ㅣ') {
       return "ch'";
-    } else if (this.notHangeul(fol) || fol === 'ㅉ') {
+    } else if (this.notHangeul(fol) || fol === 'ㅉ' || this.vowels.includes(prev) && this.consonants.includes(fol)) {
       return 't';
-    } else if (fol === 'ㅅ') {
-      return 's';
+    // } else if (fol === 'ㅅ') {
+    //   return 's';
     } else {
       return "t'";
     }
@@ -491,6 +497,8 @@ const hangulDict = {
       // ㄹ,ㅍ 받침 + ㄴ
       // normal cases
     } else if (this.notHangeul(fol) || ['ㅂ', 'ㅍ', 'ㅃ'].includes(fol)) {
+      return 'p';
+       } else if (this.vowels.includes(prev) && (this.consonants.includes(fol)&& fol !== 'ㅇ')) {
       return 'p';
     } else if (['ㄴ', 'ㄹ', 'ㅁ'].includes(fol)) {
       return 'm';
@@ -531,10 +539,18 @@ const hangulDict = {
       this.vowels.includes(fol2)
     ) {
       return '';
+} else if (
+      ['ㄷ','ㅈ'].includes(prev) && ['ㅣ','ㅕ'].includes(fol)
+    ) {
+      return '';
+
+
     } else if (fol === 'ㅅ') {
       return 's';
     } else if (this.vowels.includes(prev) && fol === 'ㄴ') {
       return 'n';
+    } else if (this.vowels.includes(prev) && this.notHangeul(fol)) {
+    return 't';
     } else if (this.notHangeul(fol) || ['ㄱ', 'ㄷ', 'ㅈ'].includes(fol)) {
       return '';
     } else {
