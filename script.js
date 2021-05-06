@@ -433,11 +433,11 @@ const hangulDict = {
     if (['ㄴ', 'ㄹ', 'ㅁ'].includes(fol)) {
       return 'n';
     } else if (
-      (this.isConsonant(fol) && fol !== 'ㅅ') ||
+      (this.isConsonant(fol) && fol !== 'ㅇ' && fol !== 'ㅅ') ||
       this.notHangeul(fol)
     ) {
       return 't';
-    } else if (this.isConsonant(fol)) {
+    } else if (this.isConsonant(fol)&& fol!== 'ㅇ') {
       return 's';
     } else {
       return "ch'";
@@ -449,8 +449,9 @@ const hangulDict = {
       return 'ng';
     } else if (this.isVowel(prev) && this.isVowel(fol)) {
       return "k'";
-    } else if (fol === 'ㅇ' && fol2 === 'ㅣ') {
-      return 'ngn';
+      // removed '부엌일' edgecase, because it intervened with '부엌이' '부엌이라고'
+    // } else if (fol === 'ㅇ' && fol2 === 'ㅣ') {
+    //   return 'ngn'; 
     } else if (this.notHangeul(fol)) {
       return 'k';
     } else {
