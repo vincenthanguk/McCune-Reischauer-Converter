@@ -332,7 +332,7 @@ const hangulDict = {
       return 'nn';
       // 허드렛일 옛이야기exception
     } else if (
-      prev === 'ㅔ' ||
+      prev === 'ㅔ' && preprev !== 'ㅇ' ||
       (prev === 'ㅖ' && fol === 'ㅇ' && fol2 === 'ㅣ')
     ) {
       return 'nn';
@@ -906,8 +906,10 @@ const AJAX = async function (query) {
 
 searchToolBtn.addEventListener('click', function (e) {
   e.preventDefault();
-  searchOutputResultsEl.value = searchOutputDescriptionEl.value = searchOutputDetailsEl.value =
-    '';
+  searchOutputResultsEl.value =
+    searchOutputDescriptionEl.value =
+    searchOutputDetailsEl.value =
+      '';
   const input = searchInputEl.value.trim().replace(' ', '+');
   AJAX(input);
 });
